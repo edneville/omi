@@ -2111,12 +2111,6 @@ FILE_EVENT1(30162, trace_WsmanConnection_ProcessResult_NoRequest_Impl, LOG_WARNI
 #endif
 FILE_EVENT1(30163, trace_WsmanConnection_ProcessSchema_Expired_Impl, LOG_WARNING, PAL_T("WsmanConnection: %p _ProcessSchemaConnectionData: expired"), void *)
 #if defined(CONFIG_ENABLE_DEBUG)
-#define trace_XmlSerializer_SerializeClass(a0) trace_XmlSerializer_SerializeClass_Impl(__FILE__, __LINE__, a0)
-#else
-#define trace_XmlSerializer_SerializeClass(a0) trace_XmlSerializer_SerializeClass_Impl(0, 0, a0)
-#endif
-FILE_EVENT1(30164, trace_XmlSerializer_SerializeClass_Impl, LOG_WARNING, PAL_T("XmlSerializer_SerializeClass with flags %x"), MI_Uint32)
-#if defined(CONFIG_ENABLE_DEBUG)
 #define trace_Wsman_CannotFindEnumerateContext(a0) trace_Wsman_CannotFindEnumerateContext_Impl(__FILE__, __LINE__, a0)
 #else
 #define trace_Wsman_CannotFindEnumerateContext(a0) trace_Wsman_CannotFindEnumerateContext_Impl(0, 0, a0)
@@ -2452,6 +2446,36 @@ FILE_EVENT0(30219, trace_ReloadConfig_OMI_OK_Impl, LOG_WARNING, PAL_T("OMI reloa
 #define trace_ReloadDispatcher_OMI_OK() trace_ReloadDispatcher_OMI_OK_Impl(0, 0)
 #endif
 FILE_EVENT0(30220, trace_ReloadDispatcher_OMI_OK_Impl, LOG_WARNING, PAL_T("OMI reloadDispatcher completed"))
+#if defined(CONFIG_ENABLE_DEBUG)
+#define trace_Trying_IPv4() trace_Trying_IPv4_Impl(__FILE__, __LINE__)
+#else
+#define trace_Trying_IPv4() trace_Trying_IPv4_Impl(0, 0)
+#endif
+FILE_EVENT0(30221, trace_Trying_IPv4_Impl, LOG_WARNING, PAL_T("Trying to listen on IPv4"))
+#if defined(CONFIG_ENABLE_DEBUG)
+#define trace_Trying_IPv6() trace_Trying_IPv6_Impl(__FILE__, __LINE__)
+#else
+#define trace_Trying_IPv6() trace_Trying_IPv6_Impl(0, 0)
+#endif
+FILE_EVENT0(30222, trace_Trying_IPv6_Impl, LOG_WARNING, PAL_T("Trying to listen on IPv6"))
+#if defined(CONFIG_ENABLE_DEBUG)
+#define trace_Listen_Failed() trace_Listen_Failed_Impl(__FILE__, __LINE__)
+#else
+#define trace_Listen_Failed() trace_Listen_Failed_Impl(0, 0)
+#endif
+FILE_EVENT0(30223, trace_Listen_Failed_Impl, LOG_WARNING, PAL_T("Listen failed on both IPv4 and IPv6"))
+#if defined(CONFIG_ENABLE_DEBUG)
+#define trace_TurnOff_IPV6_V6ONLY_Failed() trace_TurnOff_IPV6_V6ONLY_Failed_Impl(__FILE__, __LINE__)
+#else
+#define trace_TurnOff_IPV6_V6ONLY_Failed() trace_TurnOff_IPV6_V6ONLY_Failed_Impl(0, 0)
+#endif
+FILE_EVENT0(30224, trace_TurnOff_IPV6_V6ONLY_Failed_Impl, LOG_WARNING, PAL_T("Turn off IPV6_V6ONLY failed."))
+#if defined(CONFIG_ENABLE_DEBUG)
+#define trace_TurnOff_IPV6_V6ONLY_Pass() trace_TurnOff_IPV6_V6ONLY_Pass_Impl(__FILE__, __LINE__)
+#else
+#define trace_TurnOff_IPV6_V6ONLY_Pass() trace_TurnOff_IPV6_V6ONLY_Pass_Impl(0, 0)
+#endif
+FILE_EVENT0(30225, trace_TurnOff_IPV6_V6ONLY_Pass_Impl, LOG_WARNING, PAL_T("Turn off IPV6_V6ONLY pass."))
 #if defined(CONFIG_ENABLE_DEBUG)
 #define trace_Agent_DisconnectedFromServer() trace_Agent_DisconnectedFromServer_Impl(__FILE__, __LINE__)
 #else
@@ -5158,6 +5182,12 @@ FILE_EVENT0(50016, trace_HTTP_CannotBuildAuthResponse_Impl, LOG_DEBUG, PAL_T("HT
 #define trace_HTTP_StatusMsg(a0, a1) trace_HTTP_StatusMsg_Impl(0, 0, scs(a0), scs(a1))
 #endif
 FILE_EVENT2(50017, trace_HTTP_StatusMsg_Impl, LOG_DEBUG, PAL_T("HTTP: (%s):(%s)"), const char *, const char *)
+#if defined(CONFIG_ENABLE_DEBUG)
+#define trace_XmlSerializer_SerializeClass(a0) trace_XmlSerializer_SerializeClass_Impl(__FILE__, __LINE__, a0)
+#else
+#define trace_XmlSerializer_SerializeClass(a0) trace_XmlSerializer_SerializeClass_Impl(0, 0, a0)
+#endif
+FILE_EVENT1(50018, trace_XmlSerializer_SerializeClass_Impl, LOG_DEBUG, PAL_T("XmlSerializer_SerializeClass with flags %x"), MI_Uint32)
 #if defined(CONFIG_ENABLE_DEBUG)
 #define trace_Strand_Action(a0, a1, a2) trace_Strand_Action_Impl(__FILE__, __LINE__, a0, scs(a1), scs(a2))
 #else
